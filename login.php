@@ -76,8 +76,11 @@ if(isset($_POST["signupPassword2"])) {
 		<input name="signupPassword" placeholder="Parool" type="password"> <?php echo $signupPasswordError; ?> <br><br>
 		<input name="signupPassword2" placeholder="Sisesta parool uuesti" type="password"> <?php echo $signupPasswordError2; ?> <br><br>
 		<input name="signupEmail" placeholder="E-post" type="text"> <?php echo $signupEmailError; ?> <br><br>
-		<input name="singupGender" placeholder="Sugu" type="text"> <?php echo "See väli ei ole kohustuslik" ?> <br><br>
+		<input name="signupGender" value="mees" type="radio" > Mees<br>
+		<input name="signupGender" value="naine" type="radio" > Naine<br>
+		<input name="signupGender" value="muu" type="radio" > Ei soovi avaldada<br> <br>
 		<input type="submit" value="Loo kasutaja">
+	
 	
 	</form>
 	
