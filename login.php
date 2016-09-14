@@ -119,5 +119,17 @@ if(isset($_POST["biD"]) OR isset($_POST["biM"]) OR isset($_POST["biY"]))
 	<input type="submit" value="Loo kasutaja" class="button">
 </form>
 
+<!--
+
+	Kui sul on juba naiteks 10 inimesed, kellele sa tegid veebileht, siis oleks tore, kui sul on koht, kus on nende andmed
+
+
+	mvp idee - tahaks endale teha vaike veebirakendus, kus oleks kliendi andmeid.
+	klient - kes tellis veebileht
+	andmed - domeeni nimi, ftp login ja password, kliendi kontaktid ja jne.
+
+-->
+
+
 </body>
 </html>
