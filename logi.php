@@ -6,18 +6,30 @@
 	
 	$signupEmailError = "";
 	$signupPasswordError = "";
-	//kas on üldse olemas
+	$passwordAgainError = "";
+	$signupNameError = "";
+
 	
+	
+	
+	//nime kontroll
+	if( isset($_POST["signupName"]) ){
+		if( empty($_POST["signupName"]) ){
+			$signupNameError = "See väli on kohustuslik";
+			
+		}
+	}
+	
+	
+	// emaili kontroll
 	if( isset($_POST["signupEmail"]) ){
-		
-		//jah on olemas
-		//kas on tühi
 		if( empty($_POST["signupEmail"]) ){
 			$signupEmailError = "See väli on kohustuslik";
 			
 		}
 	}
 	
+	// parooli kontroll
 	if( isset($_POST["signupPassword"]) ){
 		
 		if( empty($_POST["signupPassword"]) ){
@@ -31,7 +43,19 @@
 			
 		}
 	}
-
+	
+	// kas paroolid klappuvad
+	if(isset($_POST["passwordAgain"])) {
+		
+		if( empty($_POST["passwordAgain"]) ){
+			$passwordAgainError = "Sisestage parool uuesti";
+		}else{
+			if($_POST["signupPassword"] != $_POST["passwordAgain"]) {
+			$passwordAgainError = "Sisestatud salasõnad ei kattu!";
+			}
+		}
+	}
+	
 ?>
 
 
@@ -56,10 +80,10 @@
 <h1>Loo kasutaja</h1>
 
 <form method="POST">
-    
+    <input type="text" placeholder="Ees- ja perekonnanimi" name="signupName"> <?php echo $signupNameError; ?><br><br>
 	<input type="text" placeholder="E-post" name="signupEmail"> <?php echo $signupEmailError; ?><br><br>
-	
 	<input type="password" placeholder="Parool" name="signupPassword"> <?php echo $signupPasswordError; ?><br><br>
+	<input type="password" placeholder="Parool uuesti" name="passwordAgain"> <?php echo $passwordAgainError; ?><br><br>
 	<input type="submit" value="Loo kasutaja">
 </form>
 </body>
