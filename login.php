@@ -37,6 +37,7 @@ if(isset($_POST["signupPassword2"])) {
 		if (strlen($_POST["signupPassword2"]) < 8) {
 			$signupPasswordError2 = "Parool peab olema vähemalt 8 tähemärki pikk";
 		}else {
+			//Kontrollin, kas paroolid ühtivad
 			if ($_POST["signupPassword2"] != $_POST["signupPassword"]){
 			$signupPasswordError2 = "Paroolid ei ühti";
 					} 
@@ -55,32 +56,24 @@ if(isset($_POST["signupPassword2"])) {
 	<h1>Logi sisse</h1>
 	<form method="POST">
 	
-		<label>Kasutajanimi</label>
-		<br>
-		<input name="loginUsername" type="text">
-			<br>
-			<br>
+		<label>Kasutajanimi</label> <br>
+		<input name="loginUsername" type="text"> <br><br>
 		<input name="loginPassword" placeholder="Parool" type="password"> <br><br>
 		<input type="submit" value="Logi sisse">
 	
 	</form>
 
 	<h1>Loo kasutaja</h1>
-	<form method="POST">
+	<form method="POST"> <br>
 	
-		<!--<label>E-post</label>-->
-		<br>
-		<input name="signupUsername" placeholder="Kasutajanimi" type="text"> <?php echo $signupUsernameError; ?> 
-			<br>
-			<br>
+		<input name="signupUsername" placeholder="Kasutajanimi" type="text"> <?php echo $signupUsernameError; ?> <br><br>
 		<input name="signupPassword" placeholder="Parool" type="password"> <?php echo $signupPasswordError; ?> <br><br>
 		<input name="signupPassword2" placeholder="Sisesta parool uuesti" type="password"> <?php echo $signupPasswordError2; ?> <br><br>
 		<input name="signupEmail" placeholder="E-post" type="text"> <?php echo $signupEmailError; ?> <br><br>
-		<input name="signupGender" value="mees" type="radio" > Mees<br>
-		<input name="signupGender" value="naine" type="radio" > Naine<br>
-		<input name="signupGender" value="muu" type="radio" > Ei soovi avaldada<br> <br>
+		<input name="signupGender" value="mees" type="radio" > Mees <br>
+		<input name="signupGender" value="naine" type="radio" > Naine <br>
+		<input name="signupGender" value="muu" type="radio" > Ei soovi avaldada <br><br>
 		<input type="submit" value="Loo kasutaja">
-	
 	
 	</form>
 	
