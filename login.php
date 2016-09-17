@@ -71,7 +71,10 @@ if( isset($_POST["registerPassword"] )){
 
 			$registerEmailError = "parool on kohustuslik";
 
+             if(strlen($_POST["registerPassword"])<8) {
 
+				$registerPasswordError = "Parool peab olema vähemalt 8 märki pikk";
+			}
 
 		}
 	}
@@ -136,10 +139,11 @@ if( isset($_POST["registerPassword"] )){
 	<input type=radio name=sex value=female>Naine
 	<input type=radio name=sex value=othersex>Other<br><br>
 	
+	 Kirjuta enda kohta midagi huvitavat<br>
 	<input type=text name=personal placeholder="Kirjuta midagi enda kohta" size=50> <br><br>
 	
 	
-	<input type="submit" value="Kinnitan"
+	<input type="submit" value="Kinnitan">
 
 
 
