@@ -9,6 +9,7 @@
 	$signupPasswordError = "";
 	$registerEmailError = "";
 	$registerPasswordError ="";
+	$personalError="";
 
 
 	if( isset($_POST["signupEmail"] )){
@@ -75,6 +76,14 @@ if( isset($_POST["registerPassword"] )){
 		}
 	}
 
+	if(isset($POST["personal"])){
+		
+		if(empty($POST[personal])) {
+		
+		$personalError = "Kirjuta midagi enda kohta";
+		
+	}
+	}
 ?>
 
 
@@ -115,6 +124,7 @@ if( isset($_POST["registerPassword"] )){
 
 	<?php echo $registerEmailError;?>
 	<?php echo $registerPasswordError;?>
+	<?php echo $personalError;?>
 
 	<form method=post>
 
@@ -126,7 +136,7 @@ if( isset($_POST["registerPassword"] )){
 	<input type=radio name=sex value=female>Naine
 	<input type=radio name=sex value=othersex>Other<br><br>
 	
-	<input type=text name=personal placeholder="Kirjuta midagi enda kohta"> <br><br>
+	<input type=text name=personal placeholder="Kirjuta midagi enda kohta" size=50> <br><br>
 	
 	
 	<input type="submit" value="Kinnitan"
