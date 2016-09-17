@@ -126,11 +126,15 @@ if( isset($_POST["registerPassword"] )){
 	<input type=radio name=sex value=female>Naine
 	<input type=radio name=sex value=othersex>Other<br><br>
 	
+	<input type=text name=personal placeholder="Kirjuta midagi enda kohta"> <br><br>
+	
+	
 	<input type="submit" value="Kinnitan"
 
 
 
 	</form>
+	
 
 	
 
