@@ -41,6 +41,20 @@ if (isset ($_POST["loginPassword"])) {
 	}
 }
 
+$signupmobilenumberError = "";
+
+//kas on üldse olemas
+if (isset ($_POST["signupmobilenumber"])) {
+	
+	//oli olemas, ehk keegi vajutas nuppu
+	//kas oli tühi
+	if (empty ($_POST["signupmobilenumber"])) {
+		//oli töesti tühi
+		echo "telefon number oli tühi";
+		$signupmobilenumber = "See väli on kohustuslik";
+	}
+}
+
 ?>
 
 
@@ -61,6 +75,10 @@ if (isset ($_POST["loginPassword"])) {
  <label>Password</label>
  <input name="loginPassword" type="password">
  
+  <br><br>
+ <label>Mobilenumber</label>
+ <input name="loginmobile" type="mobile">
+ 
  
  <br><br>
  
@@ -78,6 +96,10 @@ if (isset ($_POST["loginPassword"])) {
  <br><br>
  <label>Password</label>
  <input name="loginPassword" type="password" <?php echo $signupPasswordError ?>
+ 
+  <br><br>
+ <label>Password</label>
+ <input name="loginmobile" type="mobile" <?php echo $signupmobilenumberError ?>
  
  
  <br><br>
