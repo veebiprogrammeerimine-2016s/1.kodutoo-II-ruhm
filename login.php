@@ -1,21 +1,19 @@
 <?php
 
-	// GET ja POSTi muutujad
-	//var_dump ($_GET);
-	//echo"<br>";
-	//var_dump ($_post);
+	
 
 	$signupEmailError = "";
 	$signupPasswordError = "";
 	$registerEmailError = "";
 	$registerPasswordError ="";
 	$personalError="";
+	$likesError="";
+	
 
 
 	if( isset($_POST["signupEmail"] )){
 
-		//Jah, on olemas
-		//kas on tühi
+	
 
 		if( empty($_POST["signupEmail"])) {
 
@@ -48,8 +46,7 @@
 
 	if( isset($_POST["registerEmail"] )){
 
-		//Jah, on olemas
-		//kas on tühi
+		
 
 		if( empty($_POST["registerEmail"])) {
 
@@ -64,8 +61,7 @@
 
 if( isset($_POST["registerPassword"] )){
 
-		//Jah, on olemas
-		//kas on tühi
+		
 
 		if( empty($_POST["registerPassword"])) {
 
@@ -81,11 +77,18 @@ if( isset($_POST["registerPassword"] )){
 
 	if(isset($POST["personal"])){
 		
-		if(empty($POST[personal])) {
+		if(empty($POST["personal"])) {
 		
 		$personalError = "Kirjuta midagi enda kohta";
 		
-	}
+	}}
+	
+	if(isset($_POST["likes"])){
+		
+		if (empty($_POST["likes"])) {
+			
+			$likesError= "Lisa vähemalt üks fotograafia stiil";
+		}
 	}
 ?>
 
@@ -128,6 +131,7 @@ if( isset($_POST["registerPassword"] )){
 	<?php echo $registerEmailError;?>
 	<?php echo $registerPasswordError;?>
 	<?php echo $personalError;?>
+	<?php echo $likesError;?>
 
 	<form method=post>
 
@@ -141,6 +145,10 @@ if( isset($_POST["registerPassword"] )){
 	
 	 Kirjuta enda kohta midagi huvitavat<br>
 	<input type=text name=personal placeholder="Kirjuta midagi enda kohta" size=50> <br><br>
+	
+    Millised fotograafia stiilid sulle meeldivad?<br>
+     <input type=text name=personal  placeholder="stiilid"><br><br>	
+	
 	
 	
 	<input type="submit" value="Kinnitan">
