@@ -5,6 +5,11 @@
 	//var_dump($_POST);
 	
 	$signupEmailError = "";
+	$signupPasswordError ="";
+ 	$signupFirstNameError ="";
+ 	$signupLastNameError ="";
+ 	$signupDateError ="";
+ 	$termsAgreementError ="";
 	
 	// on üldse olemas selline muutja
 	if( isset( $_POST["signupEmail"] ) ){
@@ -15,15 +20,44 @@
 			
 			$signupEmailError = "See väli on kohustuslik";
 			
-		}else {
+		} 
+}
+
+	if(isset($_POST["signupPassword"])){
  		
-//oli midagi, ei olnud tühi
+ 		if(empty($_POST["signupPassword"])){
+ 			
+ 			$signupPasswordError= "Parool on kohustuslik";
+ 		}else{
+
+ 			//kui parool oli olemas -isset
+ 			//parool ei olnud tühi -empty
+ 		
+
 //kas pikkus vähemalt 8
 if(strlen($_POST["signupPassword"]) <8 ) {
-$singupPasswordError = "Parool peab olema vähemalt 8 tm pikk ";
+$singupPasswordError = "Parool peab olema vähemalt 8 tähemärki pikk ";
 	}
 	}
 	}
+
+
+if(isset($_POST["signupFirstName"])){
+ 		
+ 		if(empty($_POST["signupFirstName"])){
+ 			
+ 			$signupFirstNameError="Eesnime sisestamine on kohustuslik";
+ 		}
+ 	}
+ 	if(isset($_POST["signupLastName"])){
+ 		
+ 		if(empty($_POST["signupLastName"])){
+ 			
+ 			$signupLastNameError="Perekonnanime sisestamine on kohustuslik";
+ 		}
+ 	}
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,13 +75,13 @@ $singupPasswordError = "Parool peab olema vähemalt 8 tm pikk ";
 		<input name="loginEmail" type="text">
 		<br><br>
 		
-		<input type="password" name="loginPassword" placeholder="Parool">
+		<input name="loginPassword" placeholder="Parool" type="password">
 		<br><br>
 		
 		<input type="submit" value="Logi sisse">
 		
 		
-	</form>
+	
 	
 	
 	<h1>Loo kasutaja</h1>
@@ -60,15 +94,15 @@ $singupPasswordError = "Parool peab olema vähemalt 8 tm pikk ";
 		
 		<br><br>
 		
-		<input type="password" name="signupPassword" placeholder="Parool">
+		<input name="signupPassword" placeholder="Parool" type="password"> <?php echo $signupPasswordError; ?>
 		
-		<br><br>
+		<br><br><br>
 		
-		<input name="signupFirstName" placeholder="Eesnimi">
+		<input name="signupFirstName" placeholder="Eesnimi"> <?php echo $signupFirstNameError; ?><br>
 
-		<br><br>
+		<br>
 		
-		<input name="signupLastName" placeholder="Perekonnanimi">
+		<input name="signupLastName" placeholder="Perekonnanimi">  <?php echo $signupFirstNameError; ?><br>
 
 		<br><br>
 
