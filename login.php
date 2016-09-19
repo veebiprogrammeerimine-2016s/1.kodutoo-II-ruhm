@@ -1,4 +1,6 @@
 <?php
+#Tegemist siis mingi forograafiahuviliste veebilehega
+#Soo lisamine ei ole kohustuslik kasutaja tegemisel (ei osanud seda teha), kõik muu on kohustuslik
 
 	
 
@@ -32,7 +34,7 @@
 
 			$signupPasswordError = "see väli on kohustuslik";
 		}else{
-		//Siia jõuan siis, kui parool oli olemas ja parool, ei olnud tühi. !ELSE!
+		//Siia jõuan siis, kui parool oli olemas ja parool ei olnud tühi. !ELSE!
 			if(strlen($_POST["signupPassword"])<8) {
 
 				$signupPasswordError = "Parool peab olema vähemalt 8 märki pikk";
