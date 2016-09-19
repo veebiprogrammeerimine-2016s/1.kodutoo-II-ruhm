@@ -65,6 +65,8 @@
 		<input type="submit" value="Logi sisse">
 		
 		
+		
+		
 	</form>
 	
 	
@@ -82,6 +84,12 @@
 		<br><br>
 		
 		<input type="submit" value="Loo kasutaja">
+		
+		<select name="age">
+		<option value="male">Male</option>
+		<option value="female">Female</option>
+		<option value="other">Other</option>
+		</select>
 		
 		
 	</form>
