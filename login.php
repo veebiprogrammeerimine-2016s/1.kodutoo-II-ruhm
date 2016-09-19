@@ -18,7 +18,7 @@
 		// kas on tühi
 		if( empty($_POST["signupEmail"])){
 		
-			$signupEmailError = "See väli on kohustuslik";
+		$signupEmailError = "See väli on kohustuslik";
 		
 		}
 	
@@ -29,7 +29,7 @@
 
 			if( empty($_POST["signupPassword"])){
 			
-				$signupPasswordError = "See väli on kohustuslik";
+			$signupPasswordError = "See väli on kohustuslik";
 				
 			}else{
 				
