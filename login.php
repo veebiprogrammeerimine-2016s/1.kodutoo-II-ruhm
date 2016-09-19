@@ -9,6 +9,7 @@
 	$signupSecurityQuestionError = "";
 	$signupSecurityAnswerError = "";
 	
+
 	// on üldse olemas selline muutja
 	if( isset( $_POST["signupEmail"] ) ){
 		
@@ -26,7 +27,7 @@
 
 		if( empty( $_POST["loginPassword"] ) ){
 			
-			$signupPasswordError = "See väli on kohustuslik";}
+			$loginPasswordError = "See väli on kohustuslik";}
 		}
 
 	
