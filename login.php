@@ -40,12 +40,49 @@
 			
 		}
 		
+	
+		
 		
 		
 	}
-
+	
+	$eesnimierror= "";
+	
+   if(isset($_POST["Eesnimi"])) {
+		
+		
+		if(empty($_POST["Eesnimi"])) {
+			
+			$eesnimierror="See väli on kohustuslik";
+		}
+	}
+	
+	$Perenimierror= "";
+	
+	if(isset($_POST["Perenimi"])) {
+		
+		
+		if(empty($_POST["Perenimi"])) {
+			
+			$Perenimierror="See väli on kohustuslik";
+		}
+	}
+	
+	$aadresserror= "";
+	
+	if(isset($_POST["aadress"])) {
+		
+		
+		if(empty($_POST["aadress"])) {
+			
+			$aadresserror="See väli on kohustuslik";
+		}
+	}
+	
+	
+	
+	
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -72,18 +109,32 @@
 	
 	<h1>Loo kasutaja </h1>
 	<form method="POST">
-		<label>E-post</label>
-		<br>
 		
-		<input name="signupEmail" type="text"> <?php echo $signupEmailError; ?>
+		
+		<input name="signupEmail" placeholder="E-post "type="text"> <?php echo $signupEmailError; ?>
 		<br><br>
 		
 		<input name="signupPassword" placeholder="parool" type="password"> <?php echo $signupPasswordError; ?>
 		<br><br>
 		
+		<input name="Eesnimi" placeholder="Sisestage eesnimi" type="text" <?php echo $eesnimierror; ?>
+		<br><br><br>
+		
+		<input name="Perenimi" placeholder="Sisestage Perekonnanimi" type="text" <?php echo $Perenimierror; ?>
+		<br><br><br>
+		
+		<input name="Aadress" placeholder="Sisestage aadress" type="text" <?php echo $aadresserror; ?>
+		<br><br><br>
+		
+		
 		<input type="submit" value="Loo kasutaja">
 		
+
+		
 	</form>
+	
+	
+	
 	
 	
 </body>
