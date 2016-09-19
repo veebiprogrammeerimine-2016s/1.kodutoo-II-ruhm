@@ -1,94 +1,122 @@
 <?php
-
-	//GET ja POSTi muutujad
-	//var_dump ($_GET);
+	
+	//var_dump($_GET);
 	//echo "<br>";
-	//var_dump ($_POST);
-
-	//$_POST["signupEmail"]
+	//var_dump($_POST);
 	
 	$signupEmailError = "";
+	$signupPasswordError = "";
+	$signupCommentError = "";
 	
-	// on üldse olemas selline muutuja
-	if(isset( $_POST["signupEmail"] ) ) {
+	// kas e/post oli olemas
+	if ( isset ( $_POST["signupEmail"] ) ) {
 		
-		//jah on olemas
-		//kas on tühi
-		if( empty( $_POST["signupEmail"] ) ){
+		if ( empty ( $_POST["signupEmail"] ) ) {
 			
-			$signupEmailError = "see väli on kohustuslik";
+			// oli email, kuid see oli tühi
+			$signupEmailError = "See väli on kohustuslik!";
 			
 		}
 		
 	}
 	
-	if(isset( $_POST["signupPassword"] ) ){
+	if ( isset ( $_POST["signupPassword"] ) ) {
 		
-		if( empty( $_POST["signupPassword"] ) ){
+		if ( empty ( $_POST["signupPassword"] ) ) {
 			
-			$signupPasswordError = "parool on kohustuslik";
-			
-			
+			// oli password, kuid see oli tühi
+			$signupPasswordError = "See väli on kohustuslik!";
 			
 		} else {
 			
-			// siia jõuan siis kui parool oli olemas - isset
-			// parool ei olnud tühi - empty
+			// tean et parool on ja see ei olnud tühi
+			// VÄHEMALT 8
 			
-			//kas parooli pikkus on väiksem kui 8
-			if ( strlen($_POST["signupPassword"]) < 8  ) {
+			if ( strlen($_POST["signupPassword"]) < 8 ) {
 				
-				$signupPasswordError = "parool peab olema vähemalt 8 tähemärki pikk";
+				$signupPasswordError = "Parool peab olema vähemalt 8 tähemärkki pikk";
 				
 			}
+			
 		}
 		
-	
+		if (isset ( $_POST["comment"] ) ) {
+		
+		if ( empty ( $_POST["comment"] ) ) {
+			
+			//kommentaar oli tühi
+			$signupCommentError = "See väli on kohustuslik!" ;
+		}
+		
+	}
+		
 		
 	}
 	
+	
 ?>
-
 <!DOCTYPE html>
 <html>
-<head>
-<title>Logi sisse või loo kasutaja</title>
-</head>
-<body>
+	<head>
+		<title>Sisselogimise lehekülg</title>
+	</head>
+	<body>
 
-<h1>Logi sisse</h1>
-	<form method="POST">
+		<h1>Logi sisse</h1>
 		
-		<label>E-post</label>
-		<br>
+		<form method="POST">
+			
+			<label>E-post</label><br>
+			<input name="loginEmail" type="email">
+			
+			<br><br>
+			
+			<input name="loginPassword" type="password" placeholder="Parool">
+			
+			<br><br>
+			
+			<input type="submit" value="Logi sisse">
+			
+		</form>
 		
-		<input name="loginEmail" type="text">
-		<br><br>
+		<h1>Loo kasutaja</h1>
 		
-		<input type="password" name="loginPassword" placeholder="Parool">
-		<br><br>
+		<form method="POST">
+			
+			<label>E-post</label><br>
+			<input name="signupEmail" type="email"> <?php echo $signupEmailError; ?>
+			
+			<br><br>
+			
+			<input name="signupPassword" type="password" placeholder="Parool"> <?php echo $signupPasswordError; ?>
+			
+			<br><br>
+			
+			<label>Lehekülg</label><br>
+			<input type="text" name="website">
+			
+			<br><br>
+			
+			<label>Kommentaar</label><br>
+			<textarea name="comment" rows="5" cols="40"></textarea> <?php echo $signupCommentError; ?>
+			
+			<br><br>
+			
+			<label>Vanus</label><br>
+			<input name="signupAge" type="age">
+			
+			<br><br>
+			
+			<label>Sugu</label><br>
+			<input type="radio" name="gender" value="female">Naine	
+			<input type="radio" name="gender" value="male">Mees
+			
+			<br><br>
+			
+			<input type="submit" value="Loo kasutaja">
+			
+		</form>
 		
-		<input type="submit" value="Logi sisse">
 		
-		
-	</form>
-
-<h1>Loo kasutaja</h1>
-<form method="POST">
-
-	<label>E-post</label><br>
-	
-	<input name="signupEmail" type="text"> <?php echo $signupEmailError; ?>
-	<br><br>
-	
-	<label>Parool</label><br>
-	<input type="password" name="signupPassword" placeholder="Parool">
-	
-	<br>
-	<input type="submit" value="Loo kasutaja">
-
-</form>
-
-
-</body>
+	</body>
 </html>
