@@ -64,6 +64,14 @@ $singupPasswordError = "Parool peab olema vähemalt 8 tm pikk ";
 		
 		<br><br>
 		
+		<input name="signupFirstName" placeholder="Eesnimi">
+
+		<br><br>
+		
+		<input name="signupLastName" placeholder="Perekonnanimi">
+
+		<br><br>
+
         <form>
 		Sugu:<br>
 		<input type="radio" name="sugu" value="mees" checked> Mees<br>
