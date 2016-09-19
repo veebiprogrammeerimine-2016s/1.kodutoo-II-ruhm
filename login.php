@@ -6,14 +6,14 @@
 	
 	$signupEmailError = "";
 	
-	// on �ldse olemas selline muutja
+	// on üldse olemas selline muutja
 	if( isset( $_POST["signupEmail"] ) ){
 		
 		//jah on olemas
-		//kas on t�hi
+		//kas on tühi
 		if( empty( $_POST["signupEmail"] ) ){
 			
-			$signupEmailError = "See v�li on kohustuslik";
+			$signupEmailError = "See väli on kohustuslik";
 			
 		}
 		
@@ -22,7 +22,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Logi sisse v�i loo kasutaja</title>
+	<title>Logi sisse või loo kasutaja</title>
 </head>
 <body>
 
@@ -50,12 +50,21 @@
 		<label>E-post</label>
 		<br>
 		
-		<input name="signupEmail" type="text"> <?php echo $signupEmailError; ?>
-		<br><br>
+		<input name="signupEmail" type="text"> <?php echo $signupEmailError; ?><br><br>
 		
-		<input type="password" name="signupPassword" placeholder="Parool">
-		<br><br>
+		<input type="password" name="signupPassword" placeholder="Parool"><br><br>
+
+		<input name="signupFirstName" placeholder="Eesnimi"><br><br>
 		
+		<input name="signupLastName" placeholder="Perekonnanimi"><br><br>
+
+		<input name="signupSecurityQuestion" placeholder="Turvaküsimus"><br>
+		<input name="signupSecurityAnswer" type="password" placeholder="Vastus"><br><br>
+		
+		<input type="radio" name="gender" value="Mees"> Mees<br>
+		<input type="radio" name="gender" value="Ńaine"> Naine<br>
+		<input type="radio" name="gender" value="Ründehelikopter"> Ründehelikopter<br><br>
+
 		<input type="submit" value="Loo kasutaja">
 		
 		
