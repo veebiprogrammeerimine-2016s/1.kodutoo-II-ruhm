@@ -89,7 +89,12 @@
 		<input name="signupPassword" placeholder="Parool" type="password"> <?php echo $signupPasswordError; ?>
 		<br><br>
 		
+		<input name="signupUsername" type="text" placeholder="Kasutajanimi*"> 
+		<br><br>
+		
 		<input type="submit" value="Loo kasutaja">
+		
+		<?php echo "* - pole kohustuslik" ?>
 	
 	
 	</form>
