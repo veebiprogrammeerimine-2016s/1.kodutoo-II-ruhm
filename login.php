@@ -1,6 +1,4 @@
-	//mvp idee: Tahaksin luua sellise mvp,
-	mis aitab kunstikel/disaineritel jagada oma töid ilma, et nad peaksid muretsema nende varastamise üle.
-	Midagi sarnast DeviantArtile. Litsendid inimeste töödel ja suurema resolutsiooniga tööde eest maksmine tegijale. 
+
 
 <?php
 	
