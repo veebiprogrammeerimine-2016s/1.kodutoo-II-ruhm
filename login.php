@@ -117,14 +117,14 @@
 		<input name="signupPassword" placeholder="parool" type="password"> <?php echo $signupPasswordError; ?>
 		<br><br>
 		
-		<input name="Eesnimi" placeholder="Sisestage eesnimi" type="text" <?php echo $eesnimierror; ?>
-		<br><br><br>
+		<input name="Eesnimi" placeholder="Sisestage eesnimi" type="text"> <?php echo $eesnimierror; ?>
+		<br><br>
 		
-		<input name="Perenimi" placeholder="Sisestage Perekonnanimi" type="text" <?php echo $Perenimierror; ?>
-		<br><br><br>
+		<input name="Perenimi" placeholder="Sisestage Perekonnanimi" type="text"> <?php echo $Perenimierror; ?>
+		<br><br>
 		
-		<input name="Aadress" placeholder="Sisestage aadress" type="text" <?php echo $aadresserror; ?>
-		<br><br><br>
+		<input name="Aadress" placeholder="Sisestage aadress" type="text"> <?php echo $aadresserror; ?>
+		<br><br>
 		
 		
 		<input type="submit" value="Loo kasutaja">
