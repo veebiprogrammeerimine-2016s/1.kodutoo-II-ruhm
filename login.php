@@ -1,5 +1,8 @@
 <?php
 
+	//mvp idee on väga algeline ning võib drastiliselt muutuda
+	//ideeks mingi uus sotsiaalvõrk, mis ühendaks mängureid ning võimaldaks üksteisega suhelda
+
 	//GET ja POST muutujad
 	//var_dump($_GET);
 	//echo "<br>";
