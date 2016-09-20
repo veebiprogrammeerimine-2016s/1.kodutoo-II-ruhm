@@ -7,6 +7,7 @@
 	
 	$signupEmailError = "";
 	$signupPasswordError = "";
+	$signupRePasswordError ="";
 	
 	
 	//on üldse olemas selline muutuja
@@ -42,6 +43,21 @@
 				
 			}			
 		
+		}
+		
+		if($_POST["signupPassword"] == $_POST["signupRePassword"]){
+			
+			
+			
+			} else {
+				
+				//siia jõuab siis, kui teine parool ei ole sama, mis esimene
+								
+				
+				
+					
+					$signupRePasswordError = "Paroolid ei olnud samad";
+						
 		}
 
 ?>
@@ -89,10 +105,14 @@
 		<input name="signupPassword" placeholder="Parool" type="password"> <?php echo $signupPasswordError; ?>
 		<br><br>
 		
+		<input name="signupRePassword" placeholder="Sisesta parool uuesti" type="password"> <?php echo $signupRePasswordError; ?>
+		<br><br>
+		
 		<input name="signupUsername" type="text" placeholder="Kasutajanimi*"> 
 		<br><br>
 		
 		<input type="submit" value="Loo kasutaja">
+		<br><br>
 		
 		<?php echo "* - pole kohustuslik" ?>
 	
