@@ -1,6 +1,12 @@
 
 <?php             //täpitähtede jaoks ülevalt Encoding ja convert to UTF-8
 
+
+	// MVP idee- Minu ema veebileht "www.jahikool.ee" on ajast ja arust ning aeglane ja esineb veel teisigi probleeme.
+	// Eesmärk oleks see veebileht kas korda teha, või ise täiesti uus teha. Kuna tegu on pigem blogi laadse kodulehega, siis usun et oleks jõukohane.
+	
+	
+	
 	//GET ja POSTi muutujad
 	//var_dump ($_GET);
 	//echo "<br>";
