@@ -1,7 +1,7 @@
 <?php
 
 	//mvp idee on väga algeline ning võib drastiliselt muutuda
-	//ideeks mingi uus sotsiaalvõrk, mis ühendaks mängureid ning võimaldaks üksteisega suhelda. Rakendus, mis aitab algelisi või minimänge luua.
+	//ideeks mingi uus sotsiaalvõrk, mis ühendaks mängureid ning võimaldaks üksteisega suhelda, luua kommuune, jälgida edetabeleid jne. Seal on ka rakendus, mis aitab algelisi või minimänge luua.
 
 	//GET ja POST muutujad
 	//var_dump($_GET);
