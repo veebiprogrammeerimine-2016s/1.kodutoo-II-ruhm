@@ -8,15 +8,17 @@
 	$signupPasswordError = "";
 	$passwordAgainError = "";
 	$signupNameError = "";
-
+	$gender = "";
+	$name = "";
 	
 	
 	
 	//nime kontroll
 	if( isset($_POST["signupName"]) ){
 		if( empty($_POST["signupName"]) ){
-			$signupNameError = "See väli on kohustuslik";
-			
+			$signupNameError = "See väli on kohustuslik";	
+		} else {
+		$name = $_POST["signupName"];
 		}
 	}
 	
@@ -26,6 +28,8 @@
 		if( empty($_POST["signupEmail"]) ){
 			$signupEmailError = "See väli on kohustuslik";
 			
+		} else {
+			$email = $_POST["signupEmail"];
 		}
 	}
 	
@@ -56,6 +60,27 @@
 		}
 	}
 	
+	if(isset($_POST["gender"])){
+		if(!empty($_POST["gender"])){            
+			$gender = $_POST["gender"];
+		}
+	}
+
+	
+		// ühtegi errorit
+	
+if( isset($_POST["signupName"]) &&
+	empty($signupNameError) &&
+	empty($signupPasswordError) &&
+	empty($passwordAgainError) &&
+	empty($signupEmailError) ) {
+		
+// salvestame 
+	echo "Salvestan... <br>";
+	echo "Nimi: ". $name . "<br>";	
+	echo "E-post: ". $email . "<br>";
+	echo "Sugu: " . $gender . "<br>";
+}
 ?>
 
 
@@ -84,6 +109,29 @@
 	<input type="text" placeholder="E-post" name="signupEmail"> <?php echo $signupEmailError; ?><br><br>
 	<input type="password" placeholder="Parool" name="signupPassword"> <?php echo $signupPasswordError; ?><br><br>
 	<input type="password" placeholder="Parool uuesti" name="passwordAgain"> <?php echo $passwordAgainError; ?><br><br>
+	
+	<?php if($gender == "female"){ ?>
+Naine<input name="gender" type="radio" value="female" checked >
+<br>
+<?php } else { ?>
+Naine<input name="gender" type="radio" value="female">
+<br>
+<?php } ?>
+<?php if($gender == "male"){ ?>
+Mees<input name="gender" type="radio" value="male" checked >
+<br>
+<?php } else { ?>
+Mees<input name="gender" type="radio" value="male">
+<br>
+<?php } ?>
+
+<?php if($gender == "" || $gender == "none"){ ?>
+Määramata<input name="gender" type="radio" value="määramata" checked>
+<?php } else {?>
+Määramata<input name="gender" type="radio" value="määramata">
+<?php } ?>
+<br>
+<br>
 	<input type="submit" value="Loo kasutaja">
 </form>
 </body>
