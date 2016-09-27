@@ -105,3 +105,6 @@
 
 </body>
 </html>
+	
+	MVP: Midagi uut ei oska välja mõelda, kuid ideeks võiks olla SoundCloudi-laadne muusikakeskkond,
+	kuhu saab kasutaja üles laadida oma helid ja siis teised saavad neid kuulata.
