@@ -1,3 +1,6 @@
+MVP idee: Eesti aktsiaturu uudiste sait, kuhu on kokku koondatud kõik kohalikku börssi puututavad uudised.
+
+
 <?php
 
 	//GET ja POST muutjuad
