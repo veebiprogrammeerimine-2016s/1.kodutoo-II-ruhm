@@ -4,7 +4,13 @@
 	//var_dump ($_GET);
 	//echo "<br>";
 	//var_dump ($_POST);
-	//mvp konto mõtteterade ja tsitaadide jaoks 
+	/***********************************************************************************
+		MPV idee - Päevikupõhine veebileht. Mõtlesin, et 
+		toitumisalane ja treeningupõhine kokku lõimitud. Sisaldaks kuupäeva, söödud
+		toidu nime ja selles olevate kalorite arvu, saab teha nädala kokkuvõtteid. 
+		Samamoodi vaadata ja lisada kuupäevadel tehtud treeningharjutusi
+	***********************************************************************************************/
+	
 	
 	$signupEmailError = "";
 	$signuppasswordError = "";
