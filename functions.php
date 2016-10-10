@@ -19,6 +19,7 @@
 		echo $mysqli->error;
 		
 		$stmt->bind_param("ss", $email, $password);
+		echo $mysqli->error;
 		
 		if($stmt->execute()) {
 			echo "salvestamine õnnestus";

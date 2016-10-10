@@ -50,22 +50,19 @@
 		}
 	}	
 	
-	if(isset($_POST['Gender'])) 
+	if(isset($_POST['signupGender'])) 
 	{
-		if(empty($_POST["Gender"]))
+		if(empty($_POST["signupGender"]))
 		{
 		$genderError = " Unustasite valida oma soo";
 		}
 	}
-	if(isset($_POST['age'])) 
+	if(isset($_POST['signupAge'])) 
 	{
-		if(empty($_POST["age"]))
+		if(empty($_POST["signupAge"]))
 		{
 		$ageError = " Unustasite sisestada oma sünnipäeva";
-		}else
-			{ 
-			$signupAge=$_POST["age"];
-			}
+		}
 	}
 	
 	// peab olema email ja parool
@@ -82,12 +79,16 @@
 		{
 			//salvestame andmebaasi
 			echo "email: ".$signupEmail. "<br>";
+			$age=$_POST["signupAge"];
+			echo "vanus: ".$signupAge. "<br>";
+			
 			echo "password: ".$_POST["signupPassword"]."<br>";
 			$password = hash("sha512", $_POST["signupPassword"]);
+			$gender=$_POST["signupGender"];
+			echo "sugu: ".$gender. "<br>";
 			echo "password hashed: ".$password."<br>";
 			
-			signUp($signupEmail, $password);
-		
+			signUp($signupEmail, $password, $gender, $signupAge);
 		}
 		$error ="";
 	if ( isset($_POST["loginEmail"]) && isset($_POST["loginPassword"]) && 
@@ -127,14 +128,14 @@
   <input name="signupPassword" placeholder = "parool" type ="password"> <?php echo $signupPasswordError;?>  <br><br>
 
   valige oma sugu
-  <select name="Gender">
+  <select name="signupGender" type="signupGender">
 	<option value="">...</option>
 	<option value="mees">Mees</option>
 	<option value="naine">Naine</option>
 	<option value="meesnaine">muu</option>
   </select><?php echo $genderError;?>  <br><br>
   Sisestage oma sünnipäev<br> 
-  <input name="age" placeholder = "päev/kuu/aasta" type ="age"value="<?php echo $signupAge;?>">
+  <input name="signupAge" placeholder = "päev/kuu/aasta" type ="age"value="<?php echo $signupAge;?>">
   <?php echo $ageError;?>  <br><br>
 	Valige oma eelistatud suhtlus keel: <br>
 	<input type="radio" name="Language" value="EST" checked />EST
