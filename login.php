@@ -1,14 +1,13 @@
 <?php
 
 	
-	require("functions.php");
 	
 	// kui on juba sisse loginud siis suunan data lehele
 	if (isset($_SESSION["userId"])){
 		
 		//suunan sisselogimise lehele
 		header("Location: data.php");
-		
+		exit();
 	}
 //get ja posti muutujad
 //
@@ -88,7 +87,7 @@
 			echo "sugu: ".$gender. "<br>";
 			echo "password hashed: ".$password."<br>";
 			
-			signUp($signupEmail, $password, $gender, $signupAge);
+			
 		}
 		$error ="";
 	if ( isset($_POST["loginEmail"]) && isset($_POST["loginPassword"]) && 
