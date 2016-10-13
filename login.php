@@ -1,16 +1,16 @@
+Ei osanud selle soov valiku lahtri juurde seda ERRORIT lisada
 MVP idee: Eesti aktsiaturu uudiste sait, kuhu on kokku koondatud kõik kohalikku börssi puututavad uudised.
 
 
 <?php
-
-	//GET ja POST muutjuad
-	//var_dump ($_GET);
-	//echo "<br>";
-	//var_dump ($_POST);
 	
+	//MUUTUJAD
 	$signupEmailError = "";
 	$signupPasswordError = "";
-	$signupRePasswordError ="";
+	$signupUsername = "";
+	$signupUsernameError = "";
+	$signupGender = "";
+	$signupGenderError = "";
 	
 	
 	//on üldse olemas selline muutuja
@@ -48,20 +48,23 @@ MVP idee: Eesti aktsiaturu uudiste sait, kuhu on kokku koondatud kõik kohalikku
 		
 		}
 		
-		if($_POST["signupPassword"] == $_POST["signupRePassword"]){
+	if(isset($_POST["signupUsername"])){
+		
+		if(empty($_POST["signupUsername"])){
 			
-			
-			
-			} else {
-				
-				//siia jõuab siis, kui teine parool ei ole sama, mis esimene
-								
-				
-				
-					
-					$signupRePasswordError = "Paroolid ei olnud samad";
-						
+			$signupUsernameError = "Palun vali kasutajanimi!";
 		}
+	}
+	
+	if( isset( $_POST["signupGender"] ) ){
+		
+		if(!empty( $_POST["signupGender"] ) ){
+		
+			$signupGender = $_POST["signupGender"];
+			
+		}
+		
+	}
 
 ?>
 
@@ -107,17 +110,31 @@ MVP idee: Eesti aktsiaturu uudiste sait, kuhu on kokku koondatud kõik kohalikku
 	
 		<input name="signupPassword" placeholder="Parool" type="password"> <?php echo $signupPasswordError; ?>
 		<br><br>
-		
-		<input name="signupRePassword" placeholder="Sisesta parool uuesti" type="password"> <?php echo $signupRePasswordError; ?>
+				
+		<input name="signupUsername" type="text" placeholder="Kasutajanimi" > <?php echo $signupUsernameError; ?> 
 		<br><br>
 		
-		<input name="signupUsername" type="text" placeholder="Kasutajanimi*"> 
-		<br><br>
+		<?php if($signupGender == "mees") { ?>
+			<input type="radio" name="signupGender" value="mees" checked> Mees<br>
+		<?php }else { ?>
+			<input type="radio" name="signupGender" value="mees"> Mees<br>
+		<?php } ?>
+		
+		<?php if($signupGender == "naine") { ?>
+			<input type="radio" name="signupGender" value="naine" checked> Naine<br>
+		<?php }else { ?>
+			<input type="radio" name="signupGender" value="naine"> Naine<br>
+		<?php } ?>
+		
+		<?php if($signupGender == "muu") { ?>
+			<input type="radio" name="signupGender" value="muu" checked> Muu<br>
+		<?php }else { ?>
+			<input type="radio" name="signupGender" value="muu"> Muu<br>
+		<?php } ?>
+		<br>
 		
 		<input type="submit" value="Loo kasutaja">
 		<br><br>
-		
-		<?php echo "* - pole kohustuslik" ?>
 	
 	
 	</form>
